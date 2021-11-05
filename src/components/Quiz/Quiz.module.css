@@ -1,0 +1,46 @@
+.card{
+    display: block;
+    border-radius:15px;
+    border:2px solid pink;
+    width:800px;
+    height: 40vh;
+    padding: 9px;
+    background-color: rgb(26, 26, 54);
+}
+.quesno{
+    color: violet;
+    margin: 1%;
+}
+.QuizContainer{
+    display: flex;
+    flex-flow: row nowrap;
+    color: white;
+}
+.Question{
+    display: flex;
+    
+    justify-content: center;
+    width: 400px;
+    height: 40vh;
+}
+.ques{
+    display: block;
+}
+.options{
+    display: flex;
+ 
+    justify-content: center;
+    width: 400px;
+    height: 40vh;
+}
+.option{
+ margin-bottom: 25%;
+ border: 2px solid grey;
+ border-radius: 5px;
+
+
+
+}
+.answer{
+    display: block;
+}
