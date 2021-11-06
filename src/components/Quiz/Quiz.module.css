@@ -15,6 +15,8 @@
     display: flex;
     flex-flow: row nowrap;
     color: white;
+    padding: 9px;
+
 }
 .Question{
     display: flex;
@@ -28,19 +30,30 @@
 }
 .options{
     display: flex;
- 
     justify-content: center;
     width: 400px;
     height: 40vh;
 }
 .option{
- margin-bottom: 25%;
- border: 2px solid grey;
- border-radius: 5px;
-
-
-
+ cursor: pointer;
+ 
+}
+.singleOption{
+    display: flex;
+    border: 2px solid grey;
+    border-radius: 15px;
+    margin: 7%;
+    padding: 9px;
+    width: 100%;
+    cursor: pointer;
 }
 .answer{
     display: block;
+}
+
+.singleOption:hover{
+    background-color: green;
+    border: 2px solid white;
+    border-radius: 15px;
+    
 }

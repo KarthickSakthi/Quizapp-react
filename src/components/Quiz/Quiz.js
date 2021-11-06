@@ -1,11 +1,13 @@
 import React,{useState,useEffect} from "react";
 import style from './Quiz.module.css'
 
-const Quiz = ({quiz})=>{
+const Quiz = ({quiz,index,handleClick})=>{
 const option=[quiz.correct_answer,...quiz.incorrect_answers]
 return(
+  
     <div className={style.card}>
-        <h1 className={style.quesno}>Question {0}</h1>
+      {console.log(index)}
+        <h1 className={style.quesno}>Question {index+1}</h1>
         <div className={style.QuizContainer}>
         <div className={style.Question}>
             <div className={style.ques}>
@@ -15,7 +17,12 @@ return(
         <div className={style.options}>
             <div className={style.answer}>
           {
-           option.map(opt=><h3 className={style.option}>{opt}</h3>) 
+            
+           option.map((opt,i)=>(
+            <div className={style.singleOption}>
+           <h3 key={i} className={style.option} onClick={handleClick}>{opt}</h3>
+           </div>)) 
+          
           }
           </div>
         </div>

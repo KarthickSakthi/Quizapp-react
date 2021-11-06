@@ -7,6 +7,8 @@ const App = ()=>{
  const [apiData,setApiData] = useState([]);
  const [userName,setUserName]=useState("");
  const [userInput,setUserInput]=useState("");
+ const [quesnum,setQuesNum]=useState(0);
+ const [score,setScore]=useState(0);
  useEffect(async ()=>{
  const apiVal =await fetch(api);
  const apiJson = await apiVal.json()
@@ -19,6 +21,14 @@ function userSubmit(e){
 setUserName(userInput)
 console.log("User name "+userName)
 }
+function handleClick(){
+  
+  if(quesnum<apiData.length){
+    setQuesNum(quesnum+1)}
+  else{
+   return setQuesNum(9)
+  }
+}
 return(
  
   <div className={style.App}>
@@ -26,7 +36,18 @@ return(
       <div className={style.QuizContainer}>
         <div className={style.QuizContainerContent}>
         <h1 className={style.welcome}>Welcome {userName} </h1>
-        <Quiz quiz={apiData[0]}/>
+        {/*
+        apiData.map((q,i)=>(       
+          <Quiz key={i}
+          quiz={q}
+            index={i}
+          />  
+        )) */}
+        <Quiz
+        key={quesnum}
+        index={quesnum}
+        quiz={apiData[quesnum]}
+        handleClick={handleClick}/>
         </div>
 
     </div>
