@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from "react";
 import style from './Quiz.module.css'
 
-const Quiz = ({quiz,index,handleClick})=>{
-const option=[quiz.correct_answer,...quiz.incorrect_answers]
+const Quiz = ({quiz,index,option,handleClick})=>{
+  console.log("Option :"+ option)
 return(
   
     <div className={style.card}>

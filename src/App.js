@@ -8,6 +8,7 @@ const App = ()=>{
  const [userName,setUserName]=useState("");
  const [userInput,setUserInput]=useState("");
  const [quesnum,setQuesNum]=useState(0);
+ const [option,setOption]=useState([]);
  const [score,setScore]=useState(0);
  useEffect(async ()=>{
  const apiVal =await fetch(api);
@@ -19,14 +20,18 @@ const App = ()=>{
 function userSubmit(e){
  e.preventDefault();
 setUserName(userInput)
+//setOption(apiData[quesnum].correct_answer,...apiData[quesnum].incorrect_answers)
 console.log("User name "+userName)
 }
 function handleClick(){
-  
+  const nextQues = quesnum+1;
   if(quesnum<apiData.length){
-    setQuesNum(quesnum+1)}
+    setQuesNum(nextQues)
+    //setOption(apiData[quesnum].correct_answer,...apiData[quesnum].incorrect_answers)
+    console.log(option)
+  }
   else{
-   return setQuesNum(9)
+   alert("You Have Reached the End of Quiz")
   }
 }
 return(
@@ -45,8 +50,9 @@ return(
         )) */}
         <Quiz
         key={quesnum}
-        index={quesnum}
-        quiz={apiData[quesnum]}
+        index={quesnum<apiData.length ?quesnum :apiData.length-1 }
+        quiz={quesnum<apiData.length ? apiData[quesnum]: apiData[apiData.length-1]}
+        option={quesnum<apiData.length ? [apiData[quesnum].correct_answer,...apiData[quesnum].incorrect_answers] :[apiData[apiData.length-1].correct_answer,...apiData[apiData.length-1].incorrect_answers]  }
         handleClick={handleClick}/>
         </div>
 
