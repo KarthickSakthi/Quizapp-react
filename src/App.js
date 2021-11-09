@@ -10,52 +10,53 @@ const App = ()=>{
  const [quesnum,setQuesNum]=useState(0);
  const [option,setOption]=useState([]);
  const [score,setScore]=useState(0);
+ const [displayScore,setDisplayScore]=useState(false);
  useEffect(async ()=>{
  const apiVal =await fetch(api);
  const apiJson = await apiVal.json()
  const {results} = apiJson
+
  setApiData(results)
 
 },[])
 function userSubmit(e){
  e.preventDefault();
 setUserName(userInput)
-//setOption(apiData[quesnum].correct_answer,...apiData[quesnum].incorrect_answers)
 console.log("User name "+userName)
 }
-function handleClick(){
+function handleClick(optionVal,correctAnswer){
+  console.log("correctAnswer is "+ correctAnswer)
+  console.log("called "+ score)
+  if(optionVal==correctAnswer){
+    setScore(score+1)
+  }  
   const nextQues = quesnum+1;
+
   if(quesnum<apiData.length){
     setQuesNum(nextQues)
-    //setOption(apiData[quesnum].correct_answer,...apiData[quesnum].incorrect_answers)
     console.log(option)
   }
   else{
-   alert("You Have Reached the End of Quiz")
+   setDisplayScore(true)
   }
 }
 return(
  
   <div className={style.App}>
-    { userName ? ( 
+    {userName ? ( 
       <div className={style.QuizContainer}>
         <div className={style.QuizContainerContent}>
         <h1 className={style.welcome}>Welcome {userName} </h1>
-        {/*
-        apiData.map((q,i)=>(       
-          <Quiz key={i}
-          quiz={q}
-            index={i}
-          />  
-        )) */}
         <Quiz
         key={quesnum}
         index={quesnum<apiData.length ?quesnum :apiData.length-1 }
         quiz={quesnum<apiData.length ? apiData[quesnum]: apiData[apiData.length-1]}
-        option={quesnum<apiData.length ? [apiData[quesnum].correct_answer,...apiData[quesnum].incorrect_answers] :[apiData[apiData.length-1].correct_answer,...apiData[apiData.length-1].incorrect_answers]  }
+        option={quesnum<apiData.length ? [apiData[quesnum].correct_answer,...apiData[quesnum].incorrect_answers].sort(()=>Math.random() - 0.5) :[apiData[apiData.length-1].correct_answer,...apiData[apiData.length-1].incorrect_answers].sort(()=>Math.random() - 0.5)  }
+        correctAnswer={quesnum<apiData.length ?apiData[quesnum].correct_answer:"None"}
+        score={score}
+        displayScore={displayScore}
         handleClick={handleClick}/>
         </div>
-
     </div>
     ) : (
       <div className={style.formInput}>
@@ -65,8 +66,6 @@ return(
       </form>
       </div>
     )}
-   
-      {/*apiData.map(q=><Quiz question={q.question}/>)*/}
   </div>
 )
 }

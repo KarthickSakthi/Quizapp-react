@@ -1,9 +1,11 @@
 .card{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius:15px;
     border:2px solid pink;
     width:800px;
-    height: 40vh;
+    height: 50vh;
     padding: 9px;
     background-color: rgb(26, 26, 54);
 }
@@ -13,6 +15,7 @@
 }
 .QuizContainer{
     display: flex;
+   
     flex-flow: row nowrap;
     color: white;
     padding: 9px;
@@ -20,7 +23,7 @@
 }
 .Question{
     display: flex;
-    
+    padding-left:2%;
     justify-content: center;
     width: 400px;
     height: 40vh;
@@ -56,4 +59,8 @@
     border: 2px solid white;
     border-radius: 15px;
     
+}
+.displayScore{
+    color: white;
+   
 }
