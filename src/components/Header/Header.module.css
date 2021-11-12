@@ -3,6 +3,6 @@
     align-items: center;
     justify-content: center;
     height: 15vh;
-    background-color: blueviolet;
-
+    background: rgb(93,41,110);
+    background: linear-gradient(90deg, rgba(93,41,110,1) 0%, rgba(136,43,176,1) 98%);
 }

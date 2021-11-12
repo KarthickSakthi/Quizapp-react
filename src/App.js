@@ -32,7 +32,7 @@ function handleClick(optionVal,correctAnswer){
   }  
   const nextQues = quesnum+1;
 
-  if(quesnum<apiData.length){
+  if(quesnum<apiData.length-1){
     setQuesNum(nextQues)
     console.log(option)
   }
@@ -44,10 +44,12 @@ return(
  
   <div className={style.App}>
    
-    <Header/>
-    <div className={style.AppContainer}>
+    
+    
     {userName ? ( 
+      
       <div className={style.QuizContainer}>
+         <h1 className={style.Header}>Quiz App</h1>
         <div className={style.QuizContainerContent}>
         <h1 className={style.welcome}>Welcome {userName} </h1>
         <Quiz
@@ -56,22 +58,24 @@ return(
         quiz={quesnum<apiData.length ? apiData[quesnum]: apiData[apiData.length-1]}
         option={quesnum<apiData.length ? [apiData[quesnum].correct_answer,...apiData[quesnum].incorrect_answers].sort(()=>Math.random() - 0.5) :[apiData[apiData.length-1].correct_answer,...apiData[apiData.length-1].incorrect_answers].sort(()=>Math.random() - 0.5)  }
         correctAnswer={quesnum<apiData.length ?apiData[quesnum].correct_answer:"None"}
+        TotalQuestions={apiData.length}
         score={score}
         displayScore={displayScore}
         handleClick={handleClick}/>
         </div>
     </div>
     ) : (
-      <div >
-        <h1>Enter the Require details to Attend Quiz</h1>
+      <div className={style.Form}>
+         <h1 className={style.Header}>Quiz App</h1>
+        <h1>Enter the Required details to Attend Quiz</h1>
       <form onSubmit={userSubmit} className={style.formInput}>
-        <label>Enter Your Name :</label>
-      <input type='text' value={userInput} onChange={(e)=>setUserInput(e.target.value)} required></input>
-      <button type="submit" >Submit</button>
+        <label className={style.labelField}>Enter Your Name : </label>
+      <input className={style.inputField} spellCheck="true" type='text' value={userInput} onChange={(e)=>setUserInput(e.target.value)} required></input>
+      <button className={style.submit} type="submit" >Submit</button>
       </form>
       </div>
     )}
-    </div>
+   
   </div>
 )
 }

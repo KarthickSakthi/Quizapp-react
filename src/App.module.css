@@ -1,18 +1,31 @@
 
-.AppContainer{
+.App{
     display: flex;
     justify-content: center;
     text-align: center;
-    height: 85vh;
-    background-color: blueviolet;
-
+    height: 100vh;
+    background: rgb(21,39,124);
+    background: linear-gradient(0deg, rgba(21,39,124,1) 0%, rgba(199,32,201,1) 100%);
+}
+.Header{
+   text-align: center;
+   margin: 4%;
+   border: 2px solid white;
+   color: violet;
+   background-color: rgb(26, 26, 54);
+   border-radius: 15px;
+   padding: 9px;
+}
+.Form{
+    margin-top: 3%;
 }
 .formInput{
  margin-top: 10%; 
 }
 .QuizContainer{
-    display: flex; 
+    
    justify-content: center;
+   align-items: center;
     text-align: center;
 }
 .QuizContainerContent{
@@ -21,4 +34,19 @@
 }
 .welcome{
     margin: 2%;
+}
+.inputField{
+    width: 50%;
+    height: 3vh;
+}
+.submit{
+    padding: 3px;
+    background-color: cornflowerblue;
+    padding-left: 1%;
+    padding-right: 1%;
+    border:none;
+}
+.labelField{
+    font-size: 20px;
+    font-weight: 700;
 }

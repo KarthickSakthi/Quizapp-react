@@ -1,14 +1,14 @@
 import React,{useState,useEffect} from "react";
 import style from './Quiz.module.css'
 
-const Quiz = ({quiz,index,option,correctAnswer,score,displayScore,handleClick})=>{
+const Quiz = ({quiz,index,option,correctAnswer,TotalQuestions,score,displayScore,handleClick})=>{
   console.log("Option :"+ option)
 return(
   
     <div className={style.card}>
-      {displayScore ?(<div className={style.displayScore}><h2>Your Score is {score}</h2></div>) :
+      {displayScore ?(<div className={style.displayScore}><h2>Your Score is {score} / {TotalQuestions}</h2></div>) :
      ( <div>
-       <h1 className={style.quesno}>Question {index+1}</h1>
+       <h1 className={style.quesno}>Question {index+1} </h1>
         <div className={style.QuizContainer}>
         <div className={style.Question}>
             <div className={style.ques}>
