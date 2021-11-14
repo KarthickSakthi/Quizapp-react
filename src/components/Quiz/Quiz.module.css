@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Assistant:wght@300&family=Dosis:wght@300;500&family=Duru+Sans&family=Fresca&family=Niconne&family=Questrial&family=Rajdhani&family=Rambla&family=Zen+Kurenaido&display=swap');
 .card{
     display: flex;
     justify-content: center;
@@ -8,14 +9,16 @@
     height: 50vh;
     padding: 9px;
     background-color: rgb(26, 26, 54);
+    box-shadow: 1px 1px 1px 1px grey;
 }
 .quesno{
     color: violet;
     margin: 1%;
+  
 }
 .QuizContainer{
     display: flex;
-   
+    font-family: 'Assistant', sans-serif;
     flex-flow: row nowrap;
     color: white;
     padding: 9px;
@@ -27,6 +30,7 @@
     justify-content: center;
     width: 400px;
     height: 40vh;
+   
 }
 .ques{
     display: block;
@@ -66,5 +70,44 @@
 }
 
 @media(max-width:480px){
+    .card{
+        display: flex;
+        justify-content: center;  
+        border-radius:15px;
+        border:2px solid pink;
+        width:350px;
+        height: 60vh;
+        padding: 9px;
+        background-color: rgb(26, 26, 54);
+        box-shadow: 1px 1px 1px 1px grey;
+    }
+    .cardCointainer{
+        width: 100%;
+    }
+    .QuizContainer{
+        display: inline-flex;
+        justify-content: center;
+        font-family: 'Assistant', sans-serif;
+        flex-flow: row wrap;
+        color: white;
+        font-size: 60%;
+    }
+    
+    .options{
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+    height: 40vh;
+    margin-top: 2%;
+}
+.ques{
+    display: inline;
+    text-align: center;
 
+}
+.quesno{
+    display: inline;
+
+}
 }

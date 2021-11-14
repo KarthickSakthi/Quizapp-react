@@ -6,15 +6,11 @@ const Quiz = ({quiz,index,option,correctAnswer,TotalQuestions,score,displayScore
 return(
   
     <div className={style.card}>
-      {displayScore ?(<div className={style.displayScore}><h2>Your Score is {score} / {TotalQuestions}</h2></div>) :
-     ( <div>
-       <h1 className={style.quesno}>Question {index+1} </h1>
+      {displayScore ?(<div className={style.displayScore}><h2>Your Score is <h2 style={{display:'inline'}}>{score}</h2> / {TotalQuestions}</h2></div>) :
+     ( <div  >
+       <h1 className={style.quesno}>Question <h3 style={{display:'inline'}}>{index+1}</h3> /<h6 style={{display:'inline'}}>{TotalQuestions}</h6></h1>
         <div className={style.QuizContainer}>
-        <div className={style.Question}>
-            <div className={style.ques}>
-          <h2>{quiz.question}</h2>
-          </div>
-        </div>
+          <h2 className={style.ques}>{quiz.question}</h2>
         <div className={style.options}>
             <div className={style.answer}>
           {
@@ -24,8 +20,8 @@ return(
            <h3 key={i} className={style.option} onClick={()=>handleClick(opt,correctAnswer)}>{opt}</h3>
            </div>)) 
           
-          }
-          </div>
+          }  
+        </div> 
         </div>
         </div> 
         </div> ) }

@@ -49,9 +49,9 @@ return(
     {userName ? ( 
       
       <div className={style.QuizContainer}>
-         <h1 className={style.Header}>Quiz App</h1>
+         <h1 className={style.Header2}>Quiz App</h1>
         <div className={style.QuizContainerContent}>
-        <h1 className={style.welcome}>Welcome {userName} </h1>
+        <h1 className={style.welcome,style.username}>Welcome <span style={{display:"inline"}} >{userName} </span></h1>
         <Quiz
         key={quesnum}
         index={quesnum<apiData.length ?quesnum :apiData.length-1 }
@@ -67,7 +67,7 @@ return(
     ) : (
       <div className={style.Form}>
          <h1 className={style.Header}>Quiz App</h1>
-        <h1>Enter the Required details to Attend Quiz</h1>
+        <h1 className={style.subHeading}>Enter the Required details to Attend Quiz</h1>
       <form onSubmit={userSubmit} className={style.formInput}>
         <label className={style.labelField}>Enter Your Name : </label>
       <input className={style.inputField} spellCheck="true" type='text' value={userInput} onChange={(e)=>setUserInput(e.target.value)} required></input>

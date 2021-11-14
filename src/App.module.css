@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dosis:wght@300;500&family=Fresca&family=Niconne&family=Zen+Kurenaido&display=swap');
 .App{
     display: flex;
     justify-content: center;
@@ -6,6 +6,10 @@
     height: 100vh;
     background: rgb(21,39,124);
     background: linear-gradient(0deg, rgba(21,39,124,1) 0%, rgba(199,32,201,1) 100%);
+}
+.username{
+    font-family: 'Niconne', cursive;
+    margin: 2%;
 }
 .Header{
    text-align: center;
@@ -15,7 +19,18 @@
    background-color: rgb(26, 26, 54);
    border-radius: 15px;
    padding: 9px;
+   box-shadow: 1px 1px 1px 1px grey;
 }
+.Header2{
+    text-align: center;
+    margin: 4%;
+    border: 2px solid white;
+    color: violet;
+    background-color: rgb(26, 26, 54);
+    border-radius: 15px;
+    padding: 9px;
+    box-shadow: 1px 1px 1px 1px grey;
+ }
 .Form{
     margin-top: 3%;
 }
@@ -49,4 +64,32 @@
 .labelField{
     font-size: 20px;
     font-weight: 700;
+}
+
+
+@media(max-width:480px){
+.App{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        width: 100%;
+        background: rgb(21,39,124);
+        background: linear-gradient(0deg, rgba(21,39,124,1) 0%, rgba(199,32,201,1) 100%);
+    }
+.subHeading{
+    font-size: 18px;
+    margin-top: 5%;
+}
+.Header2{
+    text-align: center;
+    margin: 4%;
+    border: 2px solid white;
+    color: violet;
+    background-color: rgb(26, 26, 54);
+    border-radius: 15px;
+    padding: 9px;
+    box-shadow: 1px 1px 1px 1px grey;
+ }
+
 }
