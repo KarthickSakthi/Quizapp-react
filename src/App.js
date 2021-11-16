@@ -22,11 +22,9 @@ const App = ()=>{
 function userSubmit(e){
  e.preventDefault();
 setUserName(userInput)
-console.log("User name "+userName)
 }
 function handleClick(optionVal,correctAnswer){
-  console.log("correctAnswer is "+ correctAnswer)
-  console.log("called "+ score)
+ 
   if(optionVal==correctAnswer){
     setScore(score+1)
   }  
@@ -34,7 +32,6 @@ function handleClick(optionVal,correctAnswer){
 
   if(quesnum<apiData.length-1){
     setQuesNum(nextQues)
-    console.log(option)
   }
   else{
    setDisplayScore(true)

@@ -93,3 +93,21 @@
  }
 
 }
+
+/* Landscape */
+@media (max-width: 700px) and (min-width: 480px) {
+    .App{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        height: 150vh;
+        width: 100%;
+        background: rgb(21,39,124);
+        background: linear-gradient(0deg, rgba(21,39,124,1) 0%, rgba(199,32,201,1) 100%);
+    }
+    .inputField{
+        width: 50%;
+        height: 8vh;
+    }
+
+  }
