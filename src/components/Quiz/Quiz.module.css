@@ -112,7 +112,7 @@
 }
 }
 
-@media (max-width: 700px) and (min-width: 480px) {
+@media (max-width: 900px) and (min-width: 480px) {
     .card{
         display: flex;
         justify-content: center;

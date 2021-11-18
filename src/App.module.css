@@ -94,10 +94,10 @@
 
 }
 
-/* Landscape */
-@media (max-width: 700px) and (min-width: 480px) {
+
+@media (max-width: 900px) and (min-width: 480px) {
     .App{
-        display: flex;
+        display: flex;  
         justify-content: center;
         text-align: center;
         height: 150vh;
